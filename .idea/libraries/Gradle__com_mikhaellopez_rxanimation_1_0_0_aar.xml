@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mikhaellopez:rxanimation:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/abdd1abbaf5178c34b9ad7ad70411fff/jetified-rxanimation-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c68de194663e08d5aa233c3bc08f9e9d/jetified-rxanimation-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/747c3bb865588c9ee76a3f5b90ef0f61/jetified-rxanimation-1.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/747c3bb865588c9ee76a3f5b90ef0f61/jetified-rxanimation-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/747c3bb865588c9ee76a3f5b90ef0f61/jetified-rxanimation-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikhaellopez/rxanimation/1.0.0/5537a1fee1a77fd91a7b406ee6062e74a12778dc/rxanimation-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

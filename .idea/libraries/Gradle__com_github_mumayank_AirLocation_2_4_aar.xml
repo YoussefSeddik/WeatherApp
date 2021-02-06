@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.mumayank:AirLocation:2.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94476281c965efa5c3f7652809824f18/jetified-AirLocation-2.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94476281c965efa5c3f7652809824f18/jetified-AirLocation-2.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94476281c965efa5c3f7652809824f18/jetified-AirLocation-2.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.mumayank/AirLocation/2.4/2518ec5562cc1437d00b2846b01f58aa63fe9b9d/AirLocation-2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

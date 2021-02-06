@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeStoriesFragment">
+
+    <fragment
+        android:id="@+id/homeStoriesFragment"
+        android:name="com.example.weather_app.ui.home.home_stories.HomeStoriesFragment"
+        android:label="HomeStoriesFragment">
+        <action
+            android:id="@+id/action_homeStoriesFragment_to_weatherDetailsFragment"
+            app:destination="@id/weatherDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetailsFragment"
+        android:name="com.example.weather_app.ui.home.weather_details.WeatherDetailsFragment"
+        android:label="WeatherDetailsFragment">
+        <action
+            android:id="@+id/action_weatherDetailsFragment_to_homeStoriesFragment"
+            app:destination="@id/homeStoriesFragment" />
+        <argument
+            android:name="imagePath"
+            app:argType="string" />
+
+    </fragment>
+</navigation>
