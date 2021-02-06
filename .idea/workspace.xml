@@ -11,27 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecf0999e-cb0f-4f38-a477-d2092ab7e53c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/inputs/SaveWeatherStoryInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/inputs/SaveWeatherStoryInput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/interactors/AppInteractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/interactors/AppInteractorImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/mapper/Mapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/mapper/Mapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/models/WeatherModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/domain/models/WeatherModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/adapter/HomeStoriesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/adapter/HomeStoriesAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragmentContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragmentContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragmentPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/weather_details/WeatherDetailsFragmentPresenter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/utils/AnimationUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/utils/AnimationUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weather_app/utils/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_black_transparent_corner_bottom_16dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_black_transparent_corner_bottom_16dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/empty_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_stories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_stories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_weather_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_weather_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_weather_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_weather_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/home_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/home_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611352963808</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="init">
+      <created>1612631693561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612631693561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -371,10 +362,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="546" y="163" key="AndroidProcessChooserDialog/0.0.1536.834@0.0.1536.834" timestamp="1612628219290" />
-    <state x="154" y="0" key="CommitChangelistDialog2" timestamp="1611352963043">
+    <state x="154" y="0" key="CommitChangelistDialog2" timestamp="1612631692142">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="154" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1611352963043" />
+    <state x="154" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1612631692142" />
     <state width="467" height="466" key="DebuggerActiveHint" timestamp="1612604098226">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -419,10 +410,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="100" y="100" width="1336" height="634" key="ShowDiffWithBranchDialog/0.0.1536.834@0.0.1536.834" timestamp="1611320768557" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1611353021379">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1612631708512">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1611353021379" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1612631708512" />
     <state x="584" y="195" key="chooseDestDirectoryDialog" timestamp="1612619318024">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -439,10 +430,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="555" y="270" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1612549275918" />
-    <state x="426" y="191" key="run.anything.popup" timestamp="1612598408820">
+    <state x="426" y="191" key="run.anything.popup" timestamp="1612632267330">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="426" y="191" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1612598408820" />
+    <state x="426" y="191" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1612632267330" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1612621087266">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -668,22 +659,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt</url>
-          <line>148</line>
+          <line>149</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt</url>
-          <line>149</line>
+          <line>150</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt</url>
-          <line>147</line>
+          <line>148</line>
           <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/weather_app/ui/home/home_stories/HomeStoriesFragment.kt</url>
-          <line>146</line>
+          <line>147</line>
           <option name="timeStamp" value="189" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">

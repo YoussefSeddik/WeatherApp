@@ -38,6 +38,7 @@ class HomeStoriesFragment : BaseFragment<HomeStoriesFragmentContract.Presenter>(
 
     override fun initViews(savedInstanceState: Bundle?, view: View) {
         fragmentHomeStoriesBinding = FragmentHomeStoriesBinding.bind(view)
+        fragmentHomeStoriesBinding.animateShowPickCamera()
         setUpToolBar()
         presenter.attachView(this, lifecycle)
         presenter.loadSavedWeatherStories()

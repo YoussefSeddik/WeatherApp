@@ -10,6 +10,7 @@ import com.example.weather_app.utils.Utils.FULL_DATE_FORMAT
 import com.example.weather_app.utils.Utils.getImageIcon
 import com.example.weather_app.utils.Utils.getRandomString
 import com.example.weather_app.utils.Utils.longToString
+import java.util.*
 
 fun WeatherStatusResponse.convertToWeatherDetailsModel(): WeatherModel {
     val details = weather.getOrNull(0)
@@ -31,7 +32,7 @@ fun WeatherStatusResponse.convertToWeatherDetailsModel(): WeatherModel {
         windSpeed = wind.speed,
         windDirection = wind.deg.convertToWindDirectionEnum(),
         windVisibility = visibility,
-        updatedAt = dt.toLong(),
+        updatedAt = Calendar.getInstance().timeInMillis,
         countryCode = sys.country,
         cityName = name
     )

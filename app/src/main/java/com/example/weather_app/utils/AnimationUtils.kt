@@ -180,6 +180,9 @@ object AnimationUtils {
             })
     }
 
+    /**
+     * Home stories animation
+     * */
     fun FragmentHomeStoriesBinding.animateShowPickCamera() {
         addImageFloatingButton.translationY = 500F
         addImageFloatingButton.animate().translationY(0F).setDuration(200)
@@ -194,7 +197,7 @@ object AnimationUtils {
 
     fun FragmentHomeStoriesBinding.animateHidePickCamera() {
         addImageFloatingButton.animate().translationY(500F).setDuration(200)
-            .setInterpolator(AccelerateInterpolator()).setListener(object :
+            .setListener(object :
                 AnimatorListenerAdapter() {
                 override fun onAnimationStart(animation: Animator?) {
                     super.onAnimationStart(animation)
