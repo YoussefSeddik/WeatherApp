@@ -1,5 +1,6 @@
 package com.example.weather_app.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weather_app.R
 import com.example.weather_app.utils.Utils
+import com.example.weather_app.utils.Utils.changeLang
 import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseActivity<P> : AppCompatActivity(), MvpViewUtils {
@@ -43,6 +45,12 @@ abstract class BaseActivity<P> : AppCompatActivity(), MvpViewUtils {
 
     override fun showMessage(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        newBase?.let {
+            super.attachBaseContext(changeLang("en", it))
+        }
     }
 
 }

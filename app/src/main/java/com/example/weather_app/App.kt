@@ -1,5 +1,6 @@
 package com.example.weather_app
 
+import android.content.Context
 import androidx.multidex.MultiDexApplication
 import com.example.weather_app.di.appModule
 import com.example.weather_app.di.dataModule
@@ -21,5 +22,9 @@ class App : MultiDexApplication() {
                 )
             )
         }
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
     }
 }

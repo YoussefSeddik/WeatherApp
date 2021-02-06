@@ -1,5 +1,6 @@
 package com.example.weather_app.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -10,7 +11,9 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
+import android.os.Build
 import android.os.Environment
+import android.os.LocaleList
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
@@ -115,7 +118,7 @@ object Utils {
         )
         return file
     }
-
+    @SuppressLint("QueryPermissionsNeeded")
     fun shareToFaceBook(activity: Activity, path: String) {
         val imageUri: Uri = FileProvider.getUriForFile(
             activity,
@@ -145,6 +148,7 @@ object Utils {
         }
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     fun shareToTwitter(activity: Activity, path: String) {
         val imageUri: Uri = FileProvider.getUriForFile(
             activity,
@@ -196,6 +200,36 @@ object Utils {
             .map { charset.random() }
             .joinToString("")
     }
+
+    fun changeLang(language: String, context: Context): Context {
+        var mContext: Context
+        mContext = context
+        val res = mContext.resources
+        val configuration = res.configuration
+        val newLocale = Locale(language)
+
+        when {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> {
+                configuration.setLocale(newLocale)
+                val localeList = LocaleList(newLocale)
+                LocaleList.setDefault(localeList)
+                configuration.setLocales(localeList)
+                mContext = mContext.createConfigurationContext(configuration)
+
+            }
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 -> {
+                configuration.setLocale(newLocale)
+                mContext = mContext.createConfigurationContext(configuration)
+
+            }
+            else -> {
+                configuration.locale = newLocale
+                res.updateConfiguration(configuration, res.displayMetrics)
+            }
+        }
+        return mContext
+    }
+
 
 
 }
