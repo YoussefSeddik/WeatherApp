@@ -17,7 +17,6 @@
     <string name="error_getting_saved_weather_stories">Error getting weather stories</string>
     <string name="share_with">Share with</string>
     <string name="no_stories_available_yet">No stories available yet!</string>
-    <string name="saved_weather_stories">Saved weather stories</string>
     <string name="wind_speed">Wind speed:</string>
     <string name="humidity">Humidity:</string>
     <string name="pressure">Pressure:</string>
@@ -26,9 +25,11 @@
     <string name="save_to_your_stories">Save to your stories</string>
     <string name="permission_denied">Permission denied</string>
     <string name="weather_story_is_saved">Weather story is saved</string>
-    <string name="your_weather_stories">Your Weather Stories</string>
+    <string name="weather_story_is_deleted">Weather story is deleted</string>
+    <string name="saved_weather_stories">Saved Weather Stories</string>
     <string name="update_weather_data">Update weather data</string>
     <string name="delete">Delete</string>
+    <string name="feels_like">Feels like:</string>
 
 
 </resources>

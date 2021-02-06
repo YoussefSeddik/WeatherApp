@@ -1,8 +1,9 @@
 package com.example.weather_app.domain.inputs
 
 data class SaveWeatherStoryInput(
+    val storyId:String,
     val thumbnailPath: String,
-    val temp: Double,
+    val temp: Int,
     val tempDescription: String,
     val updatedAt: Long,
     val countryName: String,

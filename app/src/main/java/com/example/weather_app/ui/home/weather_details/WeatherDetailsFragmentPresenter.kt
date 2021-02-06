@@ -47,7 +47,31 @@ class WeatherDetailsFragmentPresenter(private val appInteractor: AppInteractor) 
                         view?.hideLoading()
                         when (it) {
                             is DataResult.Success -> {
-                                view?.onSaveWeatherStorySuccess(saveWeatherStoryInput.thumbnailPath)
+                                view?.onSaveWeatherStorySuccess(saveWeatherStoryInput)
+                            }
+                            is DataResult.Failure -> {
+                                view?.showMessage(it.error)
+                            }
+                        }
+                    },
+                    onError = {
+                        view?.hideLoading()
+                        view?.onNetworkError()
+                    }
+                )
+        )
+    }
+    override fun deleteWeatherStory(storyId: String) {
+        view?.showLoading()
+        compositeDisposable.add(
+            appInteractor.deleteStory(storyId).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeBy(
+                    onNext = {
+                        view?.hideLoading()
+                        when (it) {
+                            is DataResult.Success -> {
+                                view?.onDeleteWeatherStorySuccess(storyId)
                             }
                             is DataResult.Failure -> {
                                 view?.showMessage(it.error)

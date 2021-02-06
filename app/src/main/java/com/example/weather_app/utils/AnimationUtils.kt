@@ -108,16 +108,18 @@ object AnimationUtils {
     /**
      * Weather details animations
      * */
-    fun FragmentWeatherDetailsBinding.animateInflateWeatherData() {
-        weatherDetailsLayout.translationY = -1000F
-        weatherDetailsLayout.animate().translationY(0F).setDuration(600)
-            .setInterpolator(AccelerateInterpolator())
-            .setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator?) {
-                    super.onAnimationStart(animation)
-                    weatherDetailsLayout.showMe()
-                }
-            })
+    fun FragmentWeatherDetailsBinding.animateShowWeatherLayout() {
+        if (weatherDetailsLayout.isVisible.not()) {
+            weatherDetailsLayout.translationY = -1000F
+            weatherDetailsLayout.animate().translationY(0F).setDuration(600)
+                .setInterpolator(AccelerateInterpolator())
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationStart(animation: Animator?) {
+                        super.onAnimationStart(animation)
+                        weatherDetailsLayout.showMe()
+                    }
+                })
+        }
     }
 
     fun FragmentWeatherDetailsBinding.animateShowSaveStory() {
@@ -144,6 +146,16 @@ object AnimationUtils {
             })
     }
 
+    fun FragmentWeatherDetailsBinding.animateShowStoryActions() {
+        storyActionsLayout.translationY = 500F
+        storyActionsLayout.animate().translationY(0F).setDuration(200)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationStart(animation: Animator?) {
+                    storyActionsLayout.showMe()
+                }
+            })
+    }
+
 
     fun FragmentWeatherDetailsBinding.animateHideShareLayout() {
         shareStoryLayout.animate().translationY(500F).setDuration(200)
@@ -164,6 +176,29 @@ object AnimationUtils {
                 override fun onAnimationStart(animation: Animator?) {
                     super.onAnimationStart(animation)
                     shareStoryLayout.showMe()
+                }
+            })
+    }
+
+    fun FragmentHomeStoriesBinding.animateShowPickCamera() {
+        addImageFloatingButton.translationY = 500F
+        addImageFloatingButton.animate().translationY(0F).setDuration(200)
+            .setInterpolator(AccelerateInterpolator()).setListener(object :
+                AnimatorListenerAdapter() {
+                override fun onAnimationStart(animation: Animator?) {
+                    super.onAnimationStart(animation)
+                    addImageFloatingButton.showMe()
+                }
+            })
+    }
+
+    fun FragmentHomeStoriesBinding.animateHidePickCamera() {
+        addImageFloatingButton.animate().translationY(500F).setDuration(200)
+            .setInterpolator(AccelerateInterpolator()).setListener(object :
+                AnimatorListenerAdapter() {
+                override fun onAnimationStart(animation: Animator?) {
+                    super.onAnimationStart(animation)
+                    addImageFloatingButton.showMe()
                 }
             })
     }

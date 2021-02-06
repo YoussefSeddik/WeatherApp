@@ -20,8 +20,8 @@
             android:id="@+id/action_weatherDetailsFragment_to_homeStoriesFragment"
             app:destination="@id/homeStoriesFragment" />
         <argument
-            android:name="imagePath"
-            app:argType="string" />
+            android:name="entranceModel"
+            app:argType="com.example.weather_app.ui.home.weather_details.WeatherDetailsFragment$Companion$WeatherDetailsEntranceModel" />
 
     </fragment>
 </navigation>

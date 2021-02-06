@@ -16,9 +16,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
 import com.example.weather_app.R
 import java.io.*
@@ -143,7 +141,7 @@ object Utils {
         if (faceBookExist) {
             activity.startActivity(sendIntent)
         } else {
-            Intent.createChooser(sendIntent, "Share your weather status...")
+            openGooglePlayLink(activity,"com.facebook.katana")
         }
     }
 
@@ -170,7 +168,25 @@ object Utils {
         if (twitterExist) {
             activity.startActivity(tweetIntent)
         } else {
-            Intent.createChooser(tweetIntent, "Share your weather status...")
+            openGooglePlayLink(activity,"com.twitter.android")
+        }
+    }
+
+    private fun openGooglePlayLink(activity: Activity,packageName:String) {
+        try {
+            activity.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=$packageName")
+                )
+            )
+        } catch (anfe: ActivityNotFoundException) {
+            activity.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                )
+            )
         }
     }
 

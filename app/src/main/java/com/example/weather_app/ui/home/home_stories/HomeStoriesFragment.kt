@@ -6,16 +6,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.view.WindowManager
 import androidx.core.content.FileProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.weather_app.R
 import com.example.weather_app.base.BaseFragment
-import com.example.weather_app.databinding.BaseToolbarBinding
 import com.example.weather_app.databinding.FragmentHomeStoriesBinding
 import com.example.weather_app.domain.models.WeatherStoryModel
 import com.example.weather_app.ui.home.adapter.HomeStoriesAdapter
 import com.example.weather_app.ui.home.adapter.HomeStoriesListener
+import com.example.weather_app.ui.home.weather_details.WeatherDetailsFragment.Companion.EntranceType.*
+import com.example.weather_app.ui.home.weather_details.WeatherDetailsFragment.Companion.WeatherDetailsEntranceModel
+import com.example.weather_app.utils.AnimationUtils.animateHidePickCamera
+import com.example.weather_app.utils.AnimationUtils.animateShowPickCamera
 import com.example.weather_app.utils.Utils.createImageFile
 import com.example.weather_app.utils.Utils.shareToFaceBook
 import com.example.weather_app.utils.Utils.shareToTwitter
@@ -43,13 +46,24 @@ class HomeStoriesFragment : BaseFragment<HomeStoriesFragmentContract.Presenter>(
 
     private fun setUpToolBar() {
         fragmentHomeStoriesBinding.homeToolBar.titleTxtView.text =
-            getString(R.string.your_weather_stories)
+            getString(R.string.saved_weather_stories)
     }
 
-    private fun setUpController() {
-        fragmentHomeStoriesBinding.addImageFloatingButton.setOnClickListener {
+    private fun setUpController() = with(fragmentHomeStoriesBinding) {
+        addImageFloatingButton.setOnClickListener {
             pickImageFromCamera()
         }
+        storiesRecyclerView.addOnScrollListener(object :
+            RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (dy < 0) {
+                    animateHidePickCamera()
+                } else {
+                    animateShowPickCamera()
+                }
+            }
+        })
     }
 
     private fun pickImageFromCamera() {
@@ -70,9 +84,11 @@ class HomeStoriesFragment : BaseFragment<HomeStoriesFragmentContract.Presenter>(
         }
     }
 
-    private fun openWeatherDetailsFragment(path: String) {
+    private fun openStoryDetailsFragment(entranceModel: WeatherDetailsEntranceModel) {
         val action =
-            HomeStoriesFragmentDirections.actionHomeStoriesFragmentToWeatherDetailsFragment(path)
+            HomeStoriesFragmentDirections.actionHomeStoriesFragmentToWeatherDetailsFragment(
+                entranceModel
+            )
         findNavController().navigate(action)
     }
 
@@ -93,30 +109,36 @@ class HomeStoriesFragment : BaseFragment<HomeStoriesFragmentContract.Presenter>(
     private fun checkDataEmptyState() =
         with(fragmentHomeStoriesBinding) {
             if (homeStoriesAdapter.weatherStories.isEmpty()) {
-                emptyConstraintLayout.showMe()
+                emptyStoriesLayout.root.showMe()
             } else {
-                emptyConstraintLayout.secretMe()
+                emptyStoriesLayout.root.secretMe()
             }
         }
 
     private fun setUpRecyclerView(weatherStoryDetailsList: MutableList<WeatherStoryModel>) {
-        fragmentHomeStoriesBinding.weatherStatusRecyclerView.adapter = homeStoriesAdapter
+        fragmentHomeStoriesBinding.storiesRecyclerView.adapter = homeStoriesAdapter
         homeStoriesAdapter.swapData(weatherStoryDetailsList)
     }
 
     /**
      * weather adapter callBacks
      * */
-    override fun onShareWeatherWithFacebook(imagePath: String) {
+    override fun onShareStoryWithFacebookClicked(imagePath: String) {
         shareToFaceBook(requireActivity(), imagePath)
     }
 
-    override fun onShareWeatherWithTwitter(imagePath: String) {
+    override fun onShareStoryWithTwitterClicked(imagePath: String) {
         shareToTwitter(requireActivity(), imagePath)
     }
 
-    override fun onDeleteStory(storyId: String) {
+    override fun onDeleteStoryClicked(storyId: String) {
         presenter.deleteWeatherStory(storyId)
+    }
+
+    override fun onItemStoryClicked(storyModel: WeatherStoryModel) {
+        openStoryDetailsFragment(
+            WeatherDetailsEntranceModel(storyModel.thumbnailPath, storyModel.storyId, PREVIEW_STORY)
+        )
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -124,19 +146,12 @@ class HomeStoriesFragment : BaseFragment<HomeStoriesFragmentContract.Presenter>(
         when {
             requestCode == REQUEST_CODE_IMAGE && resultCode == Activity.RESULT_OK -> {
                 pickedPhotoPath?.let { filePath ->
-                    openWeatherDetailsFragment(filePath)
+                    openStoryDetailsFragment(
+                        WeatherDetailsEntranceModel(filePath, "", ADD_STORY)
+                    )
                 }
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        activity?.window?.setFlags(
-            WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN
-        )
     }
 
     companion object {

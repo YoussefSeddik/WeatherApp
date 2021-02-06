@@ -22,10 +22,10 @@ fun WeatherStatusResponse.convertToWeatherDetailsModel(): WeatherModel {
                 it.length
             )
         },
-        temp = main.temp,
-        maxTemp = main.temp_max,
-        minTemp = main.temp_min,
-        feelsLike = main.feels_like,
+        temp = main.temp.toInt(),
+        maxTemp = main.temp_max.toInt(),
+        minTemp = main.temp_min.toInt(),
+        feelsLike = main.feels_like.toInt(),
         pressure = main.pressure,
         humidity = main.humidity,
         windSpeed = wind.speed,
@@ -52,7 +52,7 @@ private fun Int.convertToWindDirectionEnum(): WindDirectionsEnum {
 
 fun SaveWeatherStoryInput.convertToWeatherEntity(): WeatherEntity {
     return WeatherEntity(
-        storyId = getRandomString(6),
+        storyId = storyId,
         thumbnailPath = thumbnailPath,
         temp = temp.toString(),
         tempDescription = tempDescription,
@@ -74,8 +74,9 @@ fun WeatherEntity.convertToWeatherStoryModel(): WeatherStoryModel {
 
 fun WeatherModel.convertToSaveWeatherInput(thumbnailPath: String): SaveWeatherStoryInput {
     return SaveWeatherStoryInput(
+        storyId = getRandomString(6),
         thumbnailPath = thumbnailPath,
-        temp = temp ?: 0.0,
+        temp = temp ?: 0,
         tempDescription = tempDescription ?: "",
         updatedAt = updatedAt ?: 0L,
         countryName = countryCode ?: "",

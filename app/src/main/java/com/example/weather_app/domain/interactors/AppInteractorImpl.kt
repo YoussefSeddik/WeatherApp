@@ -48,9 +48,9 @@ class AppInteractorImpl(
             val weatherStoriesList = it.mapNotNull { weatherEntity ->
                 weatherEntity?.convertToWeatherStoryModel()
             }.toMutableList()
-            return@flatMap Delay.observable {
-                it.onNext(DataResult.Success(weatherStoriesList))
-            }
+            Observable.just(
+                DataResult.Success<MutableList<WeatherStoryModel>>(weatherStoriesList)
+            )
         } ?: Observable.just(
             DataResult.Failure<MutableList<WeatherStoryModel>>(
                 resourceHelper.getStringResource(

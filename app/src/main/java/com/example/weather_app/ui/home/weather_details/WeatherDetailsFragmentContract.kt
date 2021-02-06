@@ -11,11 +11,15 @@ interface WeatherDetailsFragmentContract {
     interface Presenter : MvpPresenter<View> {
         fun getWeatherDetails(getWeatherDetailsInput: GetWeatherDetailsInput)
         fun saveWeatherStory(saveWeatherStoryInput: SaveWeatherStoryInput)
+        fun deleteWeatherStory(storyId:String)
+
     }
 
     interface View : MvpViewUtils {
         fun onGetWeatherDetailsSuccess(weatherModel: WeatherModel)
-        fun onSaveWeatherStorySuccess(storyPath:String)
+        fun onSaveWeatherStorySuccess(saveWeatherStoryInput: SaveWeatherStoryInput)
+        fun onDeleteWeatherStorySuccess(storyId:String)
+
     }
 
 

@@ -9,11 +9,13 @@ import com.example.weather_app.base.BaseViewHolder
 import com.example.weather_app.databinding.ItemWeatherDetailsBinding
 import com.example.weather_app.domain.models.WeatherStoryModel
 import com.example.weather_app.utils.loadCircularImage
+import com.example.weather_app.utils.loadImage
 
 interface HomeStoriesListener {
-    fun onShareWeatherWithFacebook(imagePath: String)
-    fun onShareWeatherWithTwitter(imagePath: String)
-    fun onDeleteStory(storyId: String)
+    fun onShareStoryWithFacebookClicked(imagePath: String)
+    fun onShareStoryWithTwitterClicked(imagePath: String)
+    fun onDeleteStoryClicked(storyId: String)
+    fun onItemStoryClicked(storyModel: WeatherStoryModel)
 
 }
 
@@ -26,18 +28,21 @@ class HomeStoriesAdapter(val listener: HomeStoriesListener) :
 
         init {
             itemWeatherBinding.facebookShareImageView.setOnClickListener {
-                listener.onShareWeatherWithFacebook(weatherStories[adapterPosition].thumbnailPath)
+                listener.onShareStoryWithFacebookClicked(weatherStories[adapterPosition].thumbnailPath)
             }
             itemWeatherBinding.twitterShareImageView.setOnClickListener {
-                listener.onShareWeatherWithTwitter(weatherStories[adapterPosition].thumbnailPath)
+                listener.onShareStoryWithTwitterClicked(weatherStories[adapterPosition].thumbnailPath)
             }
             itemWeatherBinding.deleteStatusImageView.setOnClickListener {
-                listener.onDeleteStory(weatherStories[adapterPosition].storyId)
+                listener.onDeleteStoryClicked(weatherStories[adapterPosition].storyId)
+            }
+            itemWeatherBinding.weatherFrameLayout.setOnClickListener {
+                listener.onItemStoryClicked(weatherStories[adapterPosition])
             }
         }
 
         fun bindView(weatherStoryModel: WeatherStoryModel) {
-            itemWeatherBinding.weatherThumbnailImageView.loadCircularImage(weatherStoryModel.thumbnailPath)
+            itemWeatherBinding.weatherThumbnailImageView.loadImage(weatherStoryModel.thumbnailPath)
             itemWeatherBinding.tempTextView.text = "${weatherStoryModel.temp} °C"
             itemWeatherBinding.weatherDescTextView.text = weatherStoryModel.tempDescription
             itemWeatherBinding.updatedAtTextView.text = weatherStoryModel.updatedAt
