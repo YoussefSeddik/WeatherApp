@@ -141,7 +141,7 @@ object Utils {
         if (faceBookExist) {
             activity.startActivity(sendIntent)
         } else {
-            openGooglePlayLink(activity,"com.facebook.katana")
+            openGooglePlayLink(activity, "com.facebook.katana")
         }
     }
 
@@ -168,11 +168,11 @@ object Utils {
         if (twitterExist) {
             activity.startActivity(tweetIntent)
         } else {
-            openGooglePlayLink(activity,"com.twitter.android")
+            openGooglePlayLink(activity, "com.twitter.android")
         }
     }
 
-    private fun openGooglePlayLink(activity: Activity,packageName:String) {
+    private fun openGooglePlayLink(activity: Activity, packageName: String) {
         try {
             activity.startActivity(
                 Intent(
